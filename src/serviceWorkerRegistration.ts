@@ -24,7 +24,6 @@ type Config = {
 };
 
 export function isOnline(): string {
-  console.log(navigator.onLine.toString());
   return navigator.onLine.toString();
 }
 

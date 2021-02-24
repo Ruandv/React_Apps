@@ -32,7 +32,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "program": "react-scripts build && cp ./pictures build/pictures -r",
+    "program": "react-scripts build",
+    "serv": "react-scripts build && serve -s build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

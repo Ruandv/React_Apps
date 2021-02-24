@@ -25,11 +25,9 @@ function App() {
         <div className="App-content">
           <div
             onMouseEnter={() => {
-              setIsHovering(true);
               play();
             }}
             onMouseLeave={() => {
-              setIsHovering(false);
               stop();
             }}
           >NO NO NO

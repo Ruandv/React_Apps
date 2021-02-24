@@ -1,8 +1,20 @@
 import React from 'react';
+import useSound from 'use-sound';
 
 import './App.css';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 function App() {
+  const soundUrl = './nono.mp3';
+
+  const [play, { stop }] = useSound(
+    soundUrl,
+    { volume: 0.5 }
+  );
+
+  const [isHovering, setIsHovering] = React.useState(
+    false
+  );
+
   return (
     <div className="App">
       <div
@@ -15,7 +27,17 @@ function App() {
       </div>
       <header className="App-body">
         <div className="App-content">
-          This is the content
+          <div
+            onMouseEnter={() => {
+              setIsHovering(true);
+              play();
+            }}
+            onMouseLeave={() => {
+              setIsHovering(false);
+              stop();
+            }}
+          >NO NO NO
+          </div>
         </div>
       </header>
     </div >

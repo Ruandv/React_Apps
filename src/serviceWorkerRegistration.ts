@@ -22,7 +22,6 @@ type Config = {
   onSuccess?: (registration: ServiceWorkerRegistration) => void;
   onUpdate?: (registration: ServiceWorkerRegistration) => void;
 };
-var currentStatus: boolean = true;
 
 export function isOnline(): string {
   console.log(navigator.onLine.toString());
@@ -113,7 +112,6 @@ function checkValidServiceWorker(swUrl: string, config?: Config) {
     headers: { 'Service-Worker': 'script' },
   })
     .then((response) => {
-      currentStatus = true;
       // Ensure service worker exists, and that we really are getting a JS file.
       const contentType = response.headers.get('content-type');
       if (
@@ -133,7 +131,6 @@ function checkValidServiceWorker(swUrl: string, config?: Config) {
     })
     .catch(() => {
       console.log('No internet connection found. App is running in offline mode.');
-      currentStatus = false;
     });
 }
 

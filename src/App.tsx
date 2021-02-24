@@ -11,10 +11,6 @@ function App() {
     { volume: 0.5 }
   );
 
-  const [isHovering, setIsHovering] = React.useState(
-    false
-  );
-
   return (
     <div className="App">
       <div

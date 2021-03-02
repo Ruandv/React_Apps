@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import PokemonComponent from "./components/PokemonComponent"
+import BookingComponent from "./components/BookingComponent"
 import './App.css';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import { Character } from './models/Character';
@@ -63,7 +64,8 @@ function App() {
         </div>
       </div>
       <div className="App-body">
-        {PokemonComponent(data)}
+        {/* {PokemonComponent(data)} */}
+        {BookingComponent()}
       </div >
     </div >
   );

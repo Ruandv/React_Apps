@@ -1,7 +1,6 @@
 import BookingComponent from "./components/BookingComponent"
 import './App.css';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-import { Character } from './models/Character';
 function App() {
   // const data: Character[] = [
   //   {

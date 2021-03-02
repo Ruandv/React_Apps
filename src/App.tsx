@@ -53,10 +53,7 @@ function App() {
   const [selectedCharacter, setSelectedCharacter] = useState(characterList[0]);
 
   // var selectedCharacter: Character = characterList[0];
-  function isActiveLink(character: Character) {
-    console.log(selectedCharacter.name + " " + character.name)
-    return selectedCharacter === character;
-  }
+
   function onCharacterClick(character: Character, e) {
     setSelectedCharacter(character);
     e.preventDefault();

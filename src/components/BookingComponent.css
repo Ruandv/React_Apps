@@ -1,6 +1,6 @@
 .appHolder {
     display: flex;
     flex-direction: column;
-    background-color: red;
+    align-items: flex-start;
     padding: 5px;
 }

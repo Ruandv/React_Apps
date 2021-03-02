@@ -1,4 +1,5 @@
 import BookingComponent from "./components/BookingComponent"
+import { Notifications } from 'react-push-notification';
 import './App.css';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 function App() {
@@ -51,6 +52,7 @@ function App() {
 
   return (
     <div className="App">
+      <Notifications />
       <div
         className={serviceWorkerRegistration.isOnline() === 'true' ? 'online' : 'offline'}
       >

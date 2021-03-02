@@ -53,9 +53,13 @@ function App() {
   const [selectedCharacter, setSelectedCharacter] = useState(characterList[0]);
 
   // var selectedCharacter: Character = characterList[0];
+  function isActiveLink(character: Character) {
+    console.log(selectedCharacter.name + " " + character.name)
+    return selectedCharacter === character;
+  }
   function onCharacterClick(character: Character, e) {
-    e.preventDefault();
     setSelectedCharacter(character);
+    e.preventDefault();
   }
   return (
     <div className="App">
@@ -70,15 +74,14 @@ function App() {
       <div className="App-body">
         <div className="sidebar">
           {characterList.map((item: Character, i) => (
-            <a href="#" onClick={(e) => onCharacterClick(item, e)}>
+            <button key={i} onClick={(e) => onCharacterClick(item, e)} className={item.name === selectedCharacter.name ? 'activeLink' : ''} >
               {item.name}
-            </a>
+            </button>
           ))}
         </div>
         <div className="content">
           {CharacterComponent(selectedCharacter)}
         </div>
-
       </div >
     </div >
   );

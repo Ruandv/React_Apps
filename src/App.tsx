@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import CharacterComponent from "./components/characterComponent"
+
+import PokemonComponent from "./components/PokemonComponent"
 import './App.css';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import { Character } from './models/Character';
 function App() {
-  const characterList: Character[] = [
+  const data: Character[] = [
     {
       "code": "B1", "name": "Garchomp", "longDescription": "When it folds up its body and extends its wings, it looks like a jet plane. It flies at sonic speed", "imageUrl": "./Garchomp.png",
       "type": "Dragon/Ground"
@@ -50,14 +51,7 @@ function App() {
       "type": "Water"
     }
   ]
-  const [selectedCharacter, setSelectedCharacter] = useState(characterList[0]);
 
-  // var selectedCharacter: Character = characterList[0];
-
-  function onCharacterClick(character: Character, e) {
-    setSelectedCharacter(character);
-    e.preventDefault();
-  }
   return (
     <div className="App">
       <div
@@ -69,16 +63,7 @@ function App() {
         </div>
       </div>
       <div className="App-body">
-        <div className="sidebar">
-          {characterList.map((item: Character, i) => (
-            <button key={i} onClick={(e) => onCharacterClick(item, e)} className={item.name === selectedCharacter.name ? 'activeLink' : ''} >
-              {item.name}
-            </button>
-          ))}
-        </div>
-        <div className="content">
-          {CharacterComponent(selectedCharacter)}
-        </div>
+        {PokemonComponent(data)}
       </div >
     </div >
   );

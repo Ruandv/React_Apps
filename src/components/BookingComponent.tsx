@@ -41,12 +41,18 @@ function BookingComponent() {
 
     }
     return (
-        <form className="appHolder" onSubmit={handleSubmit}>
-            <label>Name: <input type="text" name="name" value={name} onChange={handleNameChange} />
-            </label>
-            <label>Total attendees: <input type="number" name="attendees" value={attendees} onChange={handleAttendeeChange} />
-            </label>
-            <input type="submit" value="Submit" />
+        <form className="bookingForm" onSubmit={handleSubmit}>
+            <div>
+                <label>Name:</label>
+                <input type="text" name="name" value={name} onChange={handleNameChange} />
+            </div>
+            <div>
+                <label>Total attendees:</label>
+                <input type="number" name="attendees" value={attendees} onChange={handleAttendeeChange} />
+            </div>
+            <div className="footer">
+                <input type="submit" value="Submit" />
+            </div>
         </form>
     )
 };

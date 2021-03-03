@@ -1,6 +1,18 @@
-.appHolder {
-    display: flex;
+.bookingForm {
+    flex: 1;
     flex-direction: column;
     align-items: flex-start;
     padding: 5px;
+    background-color: cadetblue;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+}
+
+.footer>input {
+    height: 50px;
+    width: 50%;
+    border-radius: 5px;
 }

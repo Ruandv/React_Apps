@@ -49,6 +49,14 @@ function App() {
   //     "type": "Water"
   //   }
   // ]
+  // <div
+  //   className={serviceWorkerRegistration.isOnline() === 'true' ? 'online' : 'offline'}
+  // >
+  //   <div className='statusHeader'>
+  //     <img src={serviceWorkerRegistration.isOnline() === 'true' ? './Online.png' : './Offline.png'} alt="appStatus" />
+  //         Your app status {serviceWorkerRegistration.isOnline().toString()}
+  //   </div>
+  // </div>
 
   return (
     <div className="App">
@@ -58,7 +66,7 @@ function App() {
       >
         <div className='statusHeader'>
           <img src={serviceWorkerRegistration.isOnline() === 'true' ? './Online.png' : './Offline.png'} alt="appStatus" />
-          Your app status {serviceWorkerRegistration.isOnline().toString()}
+           Your app status {serviceWorkerRegistration.isOnline() === 'true' ? 'Online' : 'Offline'}
         </div>
       </div>
       <div className="App-body">

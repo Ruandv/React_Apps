@@ -18,3 +18,7 @@
     width: 200px;
     border-radius: 5px;
 }
+
+label {
+    width: 150px;
+}

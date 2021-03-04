@@ -2,6 +2,8 @@ import BookingComponent from "./components/BookingComponent"
 import { Notifications } from 'react-push-notification';
 import './App.css';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+import ReportingComponent from "./components/ReportingComponent";
+
 function App() {
   // const data: Character[] = [
   //   {
@@ -71,6 +73,7 @@ function App() {
       </div>
       <div className="App-body">
         {BookingComponent()}
+        {ReportingComponent()}
       </div >
     </div >
   );

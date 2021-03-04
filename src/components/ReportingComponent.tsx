@@ -18,7 +18,8 @@ function ReportingComponent() {
 
     return (
         <div>
-            {reservationsList ? reservationsList.map((reservationItem, index) => <Reservation todo={reservationItem} key={index} />) : ""}
+            {'Current number of Reservations : ' + reservationsList.length}
+            {/* {reservationsList ? reservationsList.map((reservationItem, index) => <Reservation todo={reservationItem} key={index} />) : ""} */}
         </div>
     )
 };

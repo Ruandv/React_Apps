@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import firebase from '../util/firebase';
-
+import Reservation from "./Reservation"
 function ReportingComponent() {
     const [reservationsList, setReservationsList] = useState([]);
 
@@ -17,8 +17,11 @@ function ReportingComponent() {
     }, []);
 
     return (
-        <div>
-            {'Current number of Reservations : ' + reservationsList.length}
+        <div className='reporting'>
+            {'Current number of Reservations : ' + (reservationsList.length > 0 ? reservationsList.map(a => Number.parseInt(a.attendees)).reduce(function (a, b) {
+                return a + b;
+            }) : 0)}
+            {reservationsList ? reservationsList.map((reservationItem, index) => <Reservation todo={reservationItem} key={index} />) : ""}
         </div>
     )
 };

@@ -12,7 +12,7 @@ export default function Reservation({ todo: reservationItem }) {
 
     return (
         <div>
-            <h1>{new Date(reservationItem.bookingDate) + ' - ' + reservationItem.name}</h1>
+            <h6>{new Date(reservationItem.bookingDate) + ' - ' + reservationItem.name + ' - ' + reservationItem.attendees}</h6>
             <button onClick={deleteReservation}>Delete</button>
         </div>
     );

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import firebase from '../util/firebase';
+import './ReportingComponent.css'
 import Reservation from "./Reservation"
 function ReportingComponent() {
     const [reservationsList, setReservationsList] = useState([]);

@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import * as serviceWorkerRegistration from '../serviceWorkerRegistration';
 import './BookingComponent.css';
 import firebase from '../util/firebase';
 
@@ -57,7 +58,7 @@ function BookingComponent() {
 
             </div>
             <div className="footer">
-                <input type="submit" value="Submit" />
+                <input type="submit" hidden={serviceWorkerRegistration.isOnline() === 'true' ? false : true} value="Submit" />
             </div>
         </form>
     )

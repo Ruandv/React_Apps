@@ -1,5 +1,5 @@
 
-import '../App.css';
+import './Reservation.css';
 import firebase from '../util/firebase';
 
 export default function Reservation({ todo: reservationItem }) {
@@ -12,8 +12,10 @@ export default function Reservation({ todo: reservationItem }) {
 
     return (
         <div>
-            <h6>{new Date(reservationItem.bookingDate) + ' - ' + reservationItem.name + ' - ' + reservationItem.attendees}</h6>
-            <button onClick={deleteReservation}>Delete</button>
+            <div id="body">
+                <h6>{new Date(reservationItem.bookingDate) + ' - ' + reservationItem.name + ' - ' + reservationItem.attendees}</h6>
+                <button onClick={deleteReservation}>Delete</button>
+            </div>
         </div>
     );
 }

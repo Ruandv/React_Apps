@@ -2,11 +2,13 @@ import React, { useState } from "react"
 import * as serviceWorkerRegistration from '../serviceWorkerRegistration';
 import './BookingComponent.css';
 import firebase from '../util/firebase';
+import LabelComponent from "../base/label/label";
+import { useNavigate } from 'react-router-dom';
 
 function BookingComponent() {
     var nextSunday = new Date();
     nextSunday.setDate(nextSunday.getDate() + (7 - nextSunday.getDay()));
-
+    let navigate = useNavigate();
 
     const [name, setName] = useState('John dos');
     const [attendees, setAttendees] = useState(1);
@@ -40,27 +42,31 @@ function BookingComponent() {
 
     }
 
+    function routeChange() {
+        let path = './reporting';
+        navigate(path, { replace: true });
+    }
+
     return (
         <form className="bookingForm" onSubmit={handleSubmit}>
             <div className="formBody">
                 <div>
-                    <label>Date :</label>
+                    {LabelComponent("Date")}
+                    {LabelComponent("Name")}
+                    {LabelComponent("Total attendees")}
+                </div>
+                <div>
                     <input type="date" name="date" value={attendanceDate} onChange={handleDateChange} />
-                </div>
-                <div>
-                    <label>Name:</label>
                     <input type="text" name="name" value={name} onChange={handleNameChange} />
-                </div>
-                <div>
-                    <label>Total attendees:</label>
                     <input type="number" name="attendees" value={attendees} onChange={handleAttendeeChange} />
                 </div>
-
             </div>
             <div className="footer">
                 <input type="submit" hidden={serviceWorkerRegistration.isOnline() === 'true' ? false : true} value="Submit" />
+                <input type="button" onClick={routeChange} hidden={serviceWorkerRegistration.isOnline() === 'true' ? false : true} value="Reporting" />
+
             </div>
-        </form>
+        </form >
     )
 };
 

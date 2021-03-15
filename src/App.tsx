@@ -2,9 +2,36 @@ import BookingComponent from "./components/BookingComponent"
 import './App.css';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import ReportingComponent from "./components/ReportingComponent";
+import { Route, Routes } from 'react-router-dom'
 
 function App() {
-  // const data: Character[] = [
+
+
+  return (
+    <div className="App">
+      <div
+        className={serviceWorkerRegistration.isOnline() === 'true' ? 'online' : 'offline'}
+      >
+        <div className='statusHeader'>
+          <img src={serviceWorkerRegistration.isOnline() === 'true' ? './Online.png' : './Offline.png'} alt="appStatus" />
+           Your app status {serviceWorkerRegistration.isOnline() === 'true' ? 'Online' : 'Offline'}
+        </div>
+      </div>
+      <div className="App-body">
+        <Routes>
+          <Route
+            path="/" element={<BookingComponent />}
+          />
+          <Route path="/reporting" element={<ReportingComponent />} />
+        </Routes>
+      </div >
+    </div >
+  );
+}
+
+
+export default App;
+// const data: Character[] = [
   //   {
   //     "code": "B1", "name": "Garchomp", "longDescription": "When it folds up its body and extends its wings, it looks like a jet plane. It flies at sonic speed", "imageUrl": "./Garchomp.png",
   //     "type": "Dragon/Ground"
@@ -58,24 +85,3 @@ function App() {
   //         Your app status {serviceWorkerRegistration.isOnline().toString()}
   //   </div>
   // </div>
-
-  return (
-    <div className="App">
-      <div
-        className={serviceWorkerRegistration.isOnline() === 'true' ? 'online' : 'offline'}
-      >
-        <div className='statusHeader'>
-          <img src={serviceWorkerRegistration.isOnline() === 'true' ? './Online.png' : './Offline.png'} alt="appStatus" />
-           Your app status {serviceWorkerRegistration.isOnline() === 'true' ? 'Online' : 'Offline'}
-        </div>
-      </div>
-      <div className="App-body">
-        {BookingComponent()}
-        {ReportingComponent()}
-      </div >
-    </div >
-  );
-}
-
-
-export default App;

@@ -1,4 +1,3 @@
-import React, { useState } from "react"
 import './label.css';
 
 function LabelComponent(caption: string) {
